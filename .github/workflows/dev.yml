@@ -10,9 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       release_id: ${{ steps.create-release.outputs.result }}
-      change_log: `dev_changelog`
-      version: `dev_version`
-      tag: `dev_tag`
+      change_log: dev_changelog
+      version: dev_version
+      tag: dev_tag
 
     steps:
       - name: Checkout Repository
@@ -27,8 +27,8 @@ jobs:
         id: create-release
         uses: actions/github-script@v6
         env:
-          RELEASE_TAG: `dev_tag`
-          RELEASE_LOG: `dev_log`
+          RELEASE_TAG: dev_tag
+          RELEASE_LOG: dev_log
         with:
           script: |
             const { data } = await github.rest.repos.createRelease({
