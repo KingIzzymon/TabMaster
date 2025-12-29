@@ -2,6 +2,11 @@ name: Dev
 
 on:
   workflow_dispatch:
+    inputs:
+      release_branch:
+        description: "Build a release for testing from the dev branch"
+        required: true
+        default: "dev"
 
 jobs:
   create-release:
