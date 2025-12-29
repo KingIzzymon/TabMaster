@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release_branch:
-        description: "Build a release for testing from the dev branch"
+        description: "Enter the name of the branch you wish to build a release from:"
         required: true
         default: "dev"
 
