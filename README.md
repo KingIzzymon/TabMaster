@@ -1,4 +1,4 @@
-# Tab Master
+# Tab Master (Dev)
 
 A plugin for customizing, adding, and removing Library Tabs.
 
