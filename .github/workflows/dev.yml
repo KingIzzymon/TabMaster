@@ -20,7 +20,6 @@ jobs:
     outputs:
       release_id: ${{ steps.create-release.outputs.result }}
       change_log: ${{ github.event.inputs.release_notes }}
-      version: dev_version
       tag: "${{ github.event.inputs.release_branch }}_${{ steps.create-release-name.outputs.result }}"
 
     steps:
@@ -41,7 +40,7 @@ jobs:
         id: create-release
         uses: actions/github-script@v6
         env:
-          RELEASE_TAG: ${{ steps.create-release-name.outputs.result }}
+          RELEASE_TAG: "${{ github.event.inputs.release_branch }}_${{ steps.create-release-name.outputs.result }}"
           RELEASE_LOG: ${{ github.event.inputs.release_notes }}
         with:
           script: |
