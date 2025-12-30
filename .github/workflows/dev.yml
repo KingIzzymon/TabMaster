@@ -34,7 +34,7 @@ jobs:
       - name: Create release name
         id: create-release-name
         run: |
-          echo "result="$(date -u +"%Y-%m-%d_%H:%M:%S_UTC")"" >> $GITHUB_OUTPUT
+          echo "result="$(date -u +"%Y%m%d_%H%M%S_UTC")"" >> $GITHUB_OUTPUT
 
       - name: Create Release
         id: create-release
