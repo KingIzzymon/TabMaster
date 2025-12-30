@@ -36,7 +36,7 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.event.inputs.release_branch }}
         run: |
-          result=`${process.env.RELEASE_TAG}_$(date -u +"%Y%m%d_%H%M%S_UTC")` >> $GITHUB_OUTPUT
+          result=`${process.env.RELEASE_TAG}`+`_`+`$(date -u +"%Y%m%d_%H%M%S_UTC")` >> $GITHUB_OUTPUT
 
       - name: Create Release
         id: create-release
