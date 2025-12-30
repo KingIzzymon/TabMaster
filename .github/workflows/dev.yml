@@ -35,14 +35,13 @@ jobs:
       - name: Create release name
         id: create-release-name
         run: |
-          release_name="$(date -u +"%Y-%m-%d %H:%M:%S UTC")"
-          return release_name
+          name="$(date -u +"%Y-%m-%d_%H:%M:%S_UTC")"
 
       - name: Create Release
         id: create-release
         uses: actions/github-script@v6
         env:
-          RELEASE_TAG:  ${{ needs.create-release-name.outputs.result }}
+          RELEASE_TAG:  ${{ needs.create-release-name.outputs.name }}
           RELEASE_LOG: ${{ github.event.inputs.release_notes }}
         with:
           script: |
